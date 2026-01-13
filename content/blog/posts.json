@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "delegation-lessons",
+    "title": "The Art of Letting Go: Delegation Lessons",
+    "date": "2025-11-24",
+    "image": "/images/blog/delegation.jpg",
+    "summary": "Explores how leadership requires relinquishing control and trusting others with responsibilities.",
+    "author": "Sandeep Khera",
+    "tags": ["Leadership", "Management", "Growth"]
+  },
+  {
+    "slug": "leadership-daughter",
+    "title": "What My Daughter Taught Me About Leadership",
+    "date": "2025-11-24",
+    "image": "/images/blog/leadership-daughter.jpg",
+    "summary": "Reflects on parenting insights that transformed my approach to managing teams.",
+    "author": "Sandeep Khera",
+    "tags": ["Leadership", "Family", "Personal Growth"]
+  },
+  {
+    "slug": "younger-me",
+    "title": "Dear Younger Me: 5 Things I Wish I Knew Before Becoming a Manager",
+    "date": "2025-11-24",
+    "image": "/images/blog/younger-me.jpg",
+    "summary": "Advice addressing common pitfalls faced by early-career managers.",
+    "author": "Sandeep Khera",
+    "tags": ["Leadership", "Career", "Advice"]
+  },
+  {
+    "slug": "crash-changed-everything",
+    "title": "The Day I Survived a Crash, and Everything Changed",
+    "date": "2025-11-24",
+    "image": "/images/blog/crash.jpg",
+    "summary": "A personal account of a pivotal moment on April 24, 2020 that reshaped my perspective.",
+    "author": "Sandeep Khera",
+    "tags": ["Personal Story", "Resilience", "Mindset"]
+  },
+  {
+    "slug": "results-not-everything",
+    "title": "Why Results Aren't Everything",
+    "date": "2025-11-24",
+    "image": "/images/blog/results.jpg",
+    "summary": "Challenges the corporate belief that achievement alone defines success.",
+    "author": "Sandeep Khera",
+    "tags": ["Mindset", "Success", "Work-Life"]
+  },
+  {
+    "slug": "stop-comparing",
+    "title": "Stop Comparing. Start Noticing.",
+    "date": "2025-11-25",
+    "image": "/images/blog/comparing.jpg",
+    "summary": "Addresses the dangers of measuring yourself against others' accomplishments.",
+    "author": "Sandeep Khera",
+    "tags": ["Mindset", "Self-Improvement"]
+  },
+  {
+    "slug": "lost-in-30s",
+    "title": "If You're Lost in Your 30s, You're Not Alone",
+    "date": "2025-11-24",
+    "image": "/images/blog/lost-30s.jpg",
+    "summary": "Normalizes the confusion many experience during their thirties.",
+    "author": "Sandeep Khera",
+    "tags": ["Personal Growth", "Life Stages"]
+  },
+  {
+    "slug": "compassion",
+    "title": "What My Journey Taught Me About Compassion",
+    "date": "2025-11-25",
+    "image": "/images/blog/compassion.jpg",
+    "summary": "Explores how authentic impact extends beyond strategic execution.",
+    "author": "Sandeep Khera",
+    "tags": ["Leadership", "Compassion", "Growth"]
+  },
+  {
+    "slug": "quiet-leadership",
+    "title": "Leadership Isn't Loud",
+    "date": "2025-11-25",
+    "image": "/images/blog/quiet-leadership.jpg",
+    "summary": "Challenges misconceptions about commanding presence equating to effective leadership.",
+    "author": "Sandeep Khera",
+    "tags": ["Leadership", "Introversion"]
+  },
+  {
+    "slug": "forgiveness-leadership",
+    "title": "The Leadership Skill No One Talks About: Forgiveness",
+    "date": "2025-11-29",
+    "image": "/images/blog/forgiveness.jpg",
+    "summary": "Examines how embracing mistakes fosters organizational growth.",
+    "author": "Sandeep Khera",
+    "tags": ["Leadership", "Culture", "Growth"]
+  },
+  {
+    "slug": "story-matters",
+    "title": "Your Story Matters, Even If No One Sees It Yet",
+    "date": "2025-11-29",
+    "image": "/images/blog/story-matters.jpg",
+    "summary": "Encourages recognizing personal significance beyond external validation.",
+    "author": "Sandeep Khera",
+    "tags": ["Motivation", "Self-Worth"]
+  },
+  {
+    "slug": "motivation-drops",
+    "title": "What I Do When My Motivation Drops at Work",
+    "date": "2025-11-29",
+    "image": "/images/blog/motivation.jpg",
+    "summary": "Practical strategies for maintaining engagement during challenging periods.",
+    "author": "Sandeep Khera",
+    "tags": ["Productivity", "Motivation", "Work"]
+  }
+]
