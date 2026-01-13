@@ -5,34 +5,240 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Blog Admin | Sandeep Khera</title>
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: #f5f5f5; min-height: 100vh; }
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 100%;
+        }
+        .login-box h1 {
+            color: #1e40af;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .login-box .subtitle {
+            color: #666;
+            margin-bottom: 24px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+        .form-group small {
+            display: block;
+            margin-top: 4px;
+            color: #6b7280;
+            font-size: 0.8rem;
+        }
+        .form-group a {
+            color: #1e40af;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        .login-box input:focus {
+            outline: none;
+            border-color: #1e40af;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            background: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+        .login-box button:hover {
+            background: #1e3a8a;
+        }
+        .error {
+            color: #dc2626;
+            background: #fef2f2;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: none;
+            font-size: 0.9rem;
+        }
+        #cms-container { display: none; }
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            color: #6b7280;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-link a:hover {
+            color: #1e40af;
+        }
+    </style>
 </head>
 <body>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <!-- Login Screen -->
+    <div class="login-container" id="login-screen">
+        <div class="login-box">
+            <h1>Blog Admin</h1>
+            <p class="subtitle">Manage your blog posts</p>
+            <p class="error" id="error-msg">Incorrect password. Please try again.</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="password">Admin Password</label>
+                    <input type="password" id="password" placeholder="Enter password" autocomplete="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="token">GitHub Token</label>
+                    <input type="password" id="token" placeholder="ghp_xxxxxxxxxxxx" required>
+                    <small>Create one at <a href="https://github.com/settings/tokens/new?scopes=repo&description=Blog%20CMS" target="_blank">GitHub Settings</a> (select 'repo' scope)</small>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <div class="back-link">
+                <a href="/">&larr; Back to website</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CMS Container (hidden until authenticated) -->
+    <div id="cms-container"></div>
+
     <script>
-        // Custom YouTube embed preview
-        CMS.registerEditorComponent({
-            id: "youtube",
-            label: "YouTube",
-            fields: [
-                {
-                    name: "id",
-                    label: "YouTube Video ID",
-                    widget: "string",
-                    hint: "The ID from the YouTube URL (e.g., dQw4w9WgXcQ from https://www.youtube.com/watch?v=dQw4w9WgXcQ)"
-                }
-            ],
-            pattern: /^{{< youtube (\S+) >}}$/,
-            fromBlock: function(match) {
-                return { id: match[1] };
-            },
-            toBlock: function(obj) {
-                return `{{< youtube ${obj.id} >}}`;
-            },
-            toPreview: function(obj) {
-                return `<iframe width="560" height="315" src="https://www.youtube.com/embed/${obj.id}" frameborder="0" allowfullscreen></iframe>`;
+        // Admin password: "sandeep2025"
+        const VALID_PASSWORD = 'sandeep2025';
+
+        // Check if already authenticated this session
+        const savedToken = sessionStorage.getItem('github_token');
+        if (sessionStorage.getItem('cms_auth') === 'true' && savedToken) {
+            showCMS(savedToken);
+        }
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const token = document.getElementById('token').value;
+
+            if (password !== VALID_PASSWORD) {
+                document.getElementById('error-msg').textContent = 'Incorrect password. Please try again.';
+                document.getElementById('error-msg').style.display = 'block';
+                return;
             }
+
+            if (!token.startsWith('ghp_') && !token.startsWith('github_pat_')) {
+                document.getElementById('error-msg').textContent = 'Invalid GitHub token format. It should start with ghp_ or github_pat_';
+                document.getElementById('error-msg').style.display = 'block';
+                return;
+            }
+
+            // Store auth in session
+            sessionStorage.setItem('cms_auth', 'true');
+            sessionStorage.setItem('github_token', token);
+            showCMS(token);
         });
+
+        function showCMS(token) {
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('cms-container').style.display = 'block';
+
+            // Set up CMS config with the token
+            window.CMS_MANUAL_INIT = true;
+
+            // Load Decap CMS
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
+            script.onload = function() {
+                // Initialize CMS with GitHub token
+                CMS.init({
+                    config: {
+                        backend: {
+                            name: 'github',
+                            repo: 'jmckinley/sandeep-khera-website',
+                            branch: 'main',
+                            api_root: 'https://api.github.com',
+                            auth_type: 'token',
+                            token: token
+                        },
+                        media_folder: 'images/blog',
+                        public_folder: '/images/blog',
+                        collections: [
+                            {
+                                name: 'blog',
+                                label: 'Blog Posts',
+                                folder: 'content/blog',
+                                create: true,
+                                slug: '{{slug}}',
+                                extension: 'md',
+                                format: 'frontmatter',
+                                fields: [
+                                    { label: 'Title', name: 'title', widget: 'string' },
+                                    { label: 'Publish Date', name: 'date', widget: 'datetime', date_format: 'YYYY-MM-DD', time_format: false },
+                                    { label: 'Featured Image', name: 'image', widget: 'image', required: false },
+                                    { label: 'Summary', name: 'summary', widget: 'text', hint: 'Brief description for blog listing (1-2 sentences)' },
+                                    { label: 'Author', name: 'author', widget: 'string', default: 'Sandeep Khera' },
+                                    { label: 'Tags', name: 'tags', widget: 'list', required: false },
+                                    { label: 'Body', name: 'body', widget: 'markdown' }
+                                ]
+                            }
+                        ]
+                    }
+                });
+
+                // Register YouTube embed component
+                CMS.registerEditorComponent({
+                    id: 'youtube',
+                    label: 'YouTube Video',
+                    fields: [
+                        {
+                            name: 'id',
+                            label: 'YouTube Video ID',
+                            widget: 'string',
+                            hint: 'Enter the video ID (e.g., dQw4w9WgXcQ from youtube.com/watch?v=dQw4w9WgXcQ)'
+                        }
+                    ],
+                    pattern: /^{{< youtube (\S+) >}}$/,
+                    fromBlock: function(match) {
+                        return { id: match[1] };
+                    },
+                    toBlock: function(obj) {
+                        return '{{< youtube ' + obj.id + ' >}}';
+                    },
+                    toPreview: function(obj) {
+                        return '<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;"><iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/' + obj.id + '" frameborder="0" allowfullscreen></iframe></div>';
+                    }
+                });
+            };
+            document.body.appendChild(script);
+        }
     </script>
 </body>
 </html>
