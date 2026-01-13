@@ -2,7 +2,7 @@ backend:
   name: github
   repo: jmckinley/sandeep-khera-website
   branch: main
-  base_url: https://sandeep-khera-oauth.vercel.app
+  base_url: https://fixedwebsite.vercel.app
   auth_endpoint: /api/auth
 
 media_folder: "images/blog"
@@ -14,11 +14,13 @@ collections:
     folder: "content/blog"
     create: true
     slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Summary", name: "summary", widget: "text", hint: "Brief description for blog listing page" }
+      - { label: "Publish Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, media_folder: "/images/blog" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "Brief description for blog listing page (1-2 sentences)" }
       - { label: "Author", name: "author", widget: "string", default: "Sandeep Khera" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Add tags like Leadership, Mindset, Business" }
+      - { label: "Body", name: "body", widget: "markdown", hint: "Use the + button to add YouTube videos" }
