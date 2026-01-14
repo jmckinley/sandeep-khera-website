@@ -136,7 +136,7 @@ async function loadBlogListing() {
         posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         blogGrid.innerHTML = posts.map(post => `
-            <article class="blog-card">
+            <a href="post.html?slug=${post.slug}" class="blog-card">
                 <div class="blog-card-image">
                     <img src="${post.image}" alt="${post.title}" loading="lazy">
                 </div>
@@ -144,9 +144,9 @@ async function loadBlogListing() {
                     <span class="blog-card-date">${formatDate(post.date)}</span>
                     <h3 class="blog-card-title">${post.title}</h3>
                     <p class="blog-card-excerpt">${post.summary}</p>
-                    <a href="post.html?slug=${post.slug}" class="blog-card-link">Read More</a>
+                    <span class="blog-card-link">Read More</span>
                 </div>
-            </article>
+            </a>
         `).join('');
 
     } catch (error) {

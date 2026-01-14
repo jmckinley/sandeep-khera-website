@@ -1345,11 +1345,15 @@ p:last-child {
 }
 
 .blog-card {
+    display: block;
     background-color: var(--color-white);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .blog-card:hover {
@@ -1388,6 +1392,7 @@ p:last-child {
     font-size: var(--text-lg);
     margin-bottom: var(--space-3);
     line-height: 1.4;
+    color: var(--color-gray-900);
 }
 
 .blog-card-excerpt {
