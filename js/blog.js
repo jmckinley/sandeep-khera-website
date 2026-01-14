@@ -123,17 +123,14 @@ async function loadPost(slug) {
     }
 }
 
-// Load blog listing from posts.json
+// Load blog listing from API (dynamically reads markdown files)
 async function loadBlogListing() {
     const blogGrid = document.getElementById('blog-grid');
     if (!blogGrid) return;
 
     try {
-        const response = await fetch('/content/blog/posts.json');
+        const response = await fetch('/api/posts');
         const posts = await response.json();
-
-        // Sort by date (newest first)
-        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
         blogGrid.innerHTML = posts.map(post => `
             <article class="blog-card">
