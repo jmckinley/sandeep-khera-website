@@ -1,13 +1,15 @@
 ---
-title: "The Day I Survived a Crash, and Everything Changed"
+title: The Day I Survived a Crash, and Everything Changed
 date: 2025-11-24
 image: /images/blog/crash.jpg
-summary: "A personal account of a pivotal moment on April 24, 2020 that reshaped my perspective."
+summary: A personal account of a pivotal moment on April 24, 2020 that reshaped
+  my perspective.
 author: Sandeep Khera
 tags:
   - Personal Story
   - Resilience
   - Mindset
+featured: true
 ---
 
 # The Day I Survived a Crash, and Everything Changed
