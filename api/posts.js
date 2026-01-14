@@ -35,11 +35,15 @@ export default async function handler(req, res) {
     // Get list of files in content/blog from GitHub
     const listUrl = `https://api.github.com/repos/${REPO}/contents/${BLOG_PATH}?ref=${BRANCH}`;
     const listResponse = await fetch(listUrl, {
-      headers: { 'Accept': 'application/vnd.github.v3+json' }
+      headers: {
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'sandeepkhera-blog'
+      }
     });
 
     if (!listResponse.ok) {
-      throw new Error(`GitHub API error: ${listResponse.status}`);
+      const errorText = await listResponse.text();
+      return res.status(500).json({ error: `GitHub API error: ${listResponse.status}`, details: errorText });
     }
 
     const files = await listResponse.json();
@@ -68,9 +72,8 @@ export default async function handler(req, res) {
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
-    res.status(200).json(posts);
+    return res.status(200).json(posts);
   } catch (error) {
-    console.error('Error fetching blog posts:', error);
-    res.status(500).json({ error: 'Failed to load posts', details: error.message });
+    return res.status(500).json({ error: 'Failed to load posts', details: error.message });
   }
 }
