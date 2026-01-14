@@ -170,23 +170,26 @@
             document.getElementById('login-screen').style.display = 'none';
             document.getElementById('cms-container').style.display = 'block';
 
-            // Set up CMS config with the token
+            // Store token for Decap CMS GitHub backend
+            localStorage.setItem('netlify-cms-user', JSON.stringify({
+                token: token,
+                provider: 'github'
+            }));
+
+            // Set up CMS config
             window.CMS_MANUAL_INIT = true;
 
             // Load Decap CMS
             const script = document.createElement('script');
             script.src = 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
             script.onload = function() {
-                // Initialize CMS with GitHub token
+                // Initialize CMS
                 CMS.init({
                     config: {
                         backend: {
                             name: 'github',
                             repo: 'kyliemckinleydemo/sandeep-khera-website',
-                            branch: 'main',
-                            api_root: 'https://api.github.com',
-                            auth_type: 'token',
-                            token: token
+                            branch: 'main'
                         },
                         media_folder: 'images/blog',
                         public_folder: '/images/blog',
