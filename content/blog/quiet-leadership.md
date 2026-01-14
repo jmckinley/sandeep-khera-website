@@ -9,6 +9,7 @@ tags:
   - Empathy
   - Leadership Skills
   - Authenticity
+featured: true
 ---
 
 Early in my career, I equated strong leadership with being the loudest voice in the room. In competitive corporate environments, volume seemed to equal authority.

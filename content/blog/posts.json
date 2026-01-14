@@ -6,7 +6,8 @@
     "image": "/images/blog/delegation-lessons.jpg",
     "summary": "How releasing control paradoxically strengthens leadership effectiveness.",
     "author": "Sandeep Khera",
-    "tags": ["Leadership", "Delegation", "Trust"]
+    "tags": ["Leadership", "Delegation", "Trust"],
+    "featured": false
   },
   {
     "slug": "leadership-daughter",
@@ -15,7 +16,8 @@
     "image": "/images/blog/leadership-daughter.jpg",
     "summary": "The most profound leadership lessons come from the smallest, most unexpected mentors.",
     "author": "Sandeep Khera",
-    "tags": ["Leadership", "Parenthood", "Growth"]
+    "tags": ["Leadership", "Parenthood", "Growth"],
+    "featured": false
   },
   {
     "slug": "younger-me",
@@ -24,7 +26,8 @@
     "image": "/images/blog/younger-me.jpg",
     "summary": "Hard-won wisdom I would share with my younger self about leadership and life.",
     "author": "Sandeep Khera",
-    "tags": ["Career Advice", "Leadership", "Self Reflection"]
+    "tags": ["Career Advice", "Leadership", "Self Reflection"],
+    "featured": false
   },
   {
     "slug": "crash-changed-everything",
@@ -33,7 +36,8 @@
     "image": "/images/blog/crash-changed.jpg",
     "summary": "A near-fatal accident became the catalyst for complete life reevaluation.",
     "author": "Sandeep Khera",
-    "tags": ["Life Lessons", "Gratitude", "Personal Transformation"]
+    "tags": ["Life Lessons", "Gratitude", "Personal Transformation"],
+    "featured": false
   },
   {
     "slug": "results-not-everything",
@@ -42,7 +46,8 @@
     "image": "/images/blog/results-not-everything.jpg",
     "summary": "How a health crisis taught me that productivity without genuine presence is merely survival.",
     "author": "Sandeep Khera",
-    "tags": ["Work Life Balance", "Burnout", "Wellness"]
+    "tags": ["Work Life Balance", "Burnout", "Wellness"],
+    "featured": false
   },
   {
     "slug": "stop-comparing",
@@ -51,7 +56,8 @@
     "image": "/images/blog/stop-comparing.jpg",
     "summary": "Your career isn't a race against others—it's a deeply personal conversation with yourself.",
     "author": "Sandeep Khera",
-    "tags": ["Self Awareness", "Personal Growth", "Authentic Leadership"]
+    "tags": ["Self Awareness", "Personal Growth", "Authentic Leadership"],
+    "featured": false
   },
   {
     "slug": "lost-in-30s",
@@ -60,7 +66,8 @@
     "image": "/images/blog/lost-in-30s.jpg",
     "summary": "Being lost isn't failure—it's an opening toward genuine self-awareness and transformation.",
     "author": "Sandeep Khera",
-    "tags": ["Personal Growth", "Self Discovery", "Resilience"]
+    "tags": ["Personal Growth", "Self Discovery", "Resilience"],
+    "featured": false
   },
   {
     "slug": "compassion",
@@ -69,7 +76,8 @@
     "image": "/images/blog/compassion.jpg",
     "summary": "A childhood lesson that shaped my understanding of ethical leadership.",
     "author": "Sandeep Khera",
-    "tags": ["Compassion", "Ethical Leadership", "Life Lessons"]
+    "tags": ["Compassion", "Ethical Leadership", "Life Lessons"],
+    "featured": false
   },
   {
     "slug": "quiet-leadership",
@@ -78,7 +86,8 @@
     "image": "/images/blog/quiet-leadership.jpg",
     "summary": "The most powerful impact comes through consistent understanding, not grand pronouncements.",
     "author": "Sandeep Khera",
-    "tags": ["Quiet Leadership", "Empathy", "Authenticity"]
+    "tags": ["Quiet Leadership", "Empathy", "Authenticity"],
+    "featured": true
   },
   {
     "slug": "forgiveness-leadership",
@@ -87,7 +96,8 @@
     "image": "/images/blog/forgiveness-leadership.jpg",
     "summary": "How we handle others' failures—and our own—defines the culture we build.",
     "author": "Sandeep Khera",
-    "tags": ["Forgiveness", "Emotional Intelligence", "Workplace Culture"]
+    "tags": ["Forgiveness", "Emotional Intelligence", "Workplace Culture"],
+    "featured": false
   },
   {
     "slug": "story-matters",
@@ -96,7 +106,8 @@
     "image": "/images/blog/story-matters.jpg",
     "summary": "Don't underestimate the transformative power of your own journey.",
     "author": "Sandeep Khera",
-    "tags": ["Personal Journey", "Resilience", "Self Belief"]
+    "tags": ["Personal Journey", "Resilience", "Self Belief"],
+    "featured": false
   },
   {
     "slug": "motivation-drops",
@@ -105,7 +116,8 @@
     "image": "/images/blog/motivation-drops.jpg",
     "summary": "Practical strategies for managing motivation dips without superficial positivity.",
     "author": "Sandeep Khera",
-    "tags": ["Motivation", "Productivity", "Work Life Balance"]
+    "tags": ["Motivation", "Productivity", "Work Life Balance"],
+    "featured": false
   },
   {
     "slug": "weekend-boundaries",
@@ -114,7 +126,8 @@
     "image": "/images/blog/weekend-boundaries.jpg",
     "summary": "How protecting personal time fuels professional performance.",
     "author": "Sandeep Khera",
-    "tags": ["Work Life Balance", "Boundaries", "Wellbeing"]
+    "tags": ["Work Life Balance", "Boundaries", "Wellbeing"],
+    "featured": false
   },
   {
     "slug": "hiring-potential",
@@ -123,7 +136,8 @@
     "image": "/images/blog/hiring-potential.jpg",
     "summary": "Why adaptability and learning agility matter more than credentials.",
     "author": "Sandeep Khera",
-    "tags": ["Hiring", "Leadership", "Talent Management"]
+    "tags": ["Hiring", "Leadership", "Talent Management"],
+    "featured": false
   },
   {
     "slug": "recognition-beyond-bonus",
@@ -132,7 +146,8 @@
     "image": "/images/blog/recognition-beyond-bonus.jpg",
     "summary": "Why genuine appreciation creates deeper impact than financial rewards alone.",
     "author": "Sandeep Khera",
-    "tags": ["Leadership", "Team Culture", "Recognition"]
+    "tags": ["Leadership", "Team Culture", "Recognition"],
+    "featured": false
   },
   {
     "slug": "hardest-feedback",
@@ -141,7 +156,8 @@
     "image": "/images/blog/hardest-feedback.jpg",
     "summary": "A painful, yet necessary, lesson in delivering hard truths with compassion and integrity.",
     "author": "Sandeep Khera",
-    "tags": ["Leadership", "Feedback", "Integrity"]
+    "tags": ["Leadership", "Feedback", "Integrity"],
+    "featured": false
   },
   {
     "slug": "conflict-is-gift",
@@ -150,7 +166,8 @@
     "image": "/images/blog/conflict-is-gift.jpg",
     "summary": "Why respectful disagreement fuels innovation rather than hindering it.",
     "author": "Sandeep Khera",
-    "tags": ["Conflict Resolution", "Leadership", "Innovation"]
+    "tags": ["Conflict Resolution", "Leadership", "Innovation"],
+    "featured": false
   },
   {
     "slug": "ai-management",
@@ -159,7 +176,8 @@
     "image": "/images/blog/ai-management.jpg",
     "summary": "AI's genuine potential lies not in replacing leaders, but in augmenting human decision-making.",
     "author": "Sandeep Khera",
-    "tags": ["AI", "Leadership", "Technology"]
+    "tags": ["AI", "Leadership", "Technology"],
+    "featured": false
   },
   {
     "slug": "workplaces-2030",
@@ -168,6 +186,7 @@
     "image": "/images/blog/workplaces-2030.jpg",
     "summary": "Beyond hybrid work—the fundamental shifts that will define the workplace of the future.",
     "author": "Sandeep Khera",
-    "tags": ["Future of Work", "Leadership", "Culture"]
+    "tags": ["Future of Work", "Leadership", "Culture"],
+    "featured": false
   }
 ]

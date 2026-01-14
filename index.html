@@ -357,6 +357,19 @@
         </div>
     </section>
 
+    <!-- Featured Post Section -->
+    <section class="featured-post section section-alt" id="featured-post">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">From the Blog</span>
+                <h2 class="section-title">Featured Insight</h2>
+            </div>
+            <div class="featured-post-content" id="featured-post-content">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
     <!-- Book Section -->
     <section class="book-preview section section-alt" id="book-preview">
         <div class="container">
@@ -495,5 +508,63 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Featured Post Loader
+        (async function loadFeaturedPost() {
+            const section = document.getElementById('featured-post');
+            const container = document.getElementById('featured-post-content');
+            if (!section || !container) return;
+
+            try {
+                const response = await fetch('/content/blog/posts.json');
+                const posts = await response.json();
+
+                // Find the featured post
+                const featuredPost = posts.find(post => post.featured === true);
+
+                if (!featuredPost) {
+                    // Hide section if no featured post
+                    section.style.display = 'none';
+                    return;
+                }
+
+                // Show section
+                section.classList.add('has-featured');
+
+                // Format date
+                const date = new Date(featuredPost.date);
+                const formattedDate = date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                // Render featured post card
+                container.innerHTML = `
+                    <a href="post.html?slug=${featuredPost.slug}" class="featured-post-card">
+                        <div class="featured-post-image">
+                            <img src="${featuredPost.image || '/images/blog/default.jpg'}" alt="${featuredPost.title}" loading="lazy">
+                            <span class="featured-post-badge">Featured</span>
+                        </div>
+                        <div class="featured-post-info">
+                            <div class="featured-post-meta">
+                                <span class="featured-post-date">${formattedDate}</span>
+                                ${featuredPost.tags && featuredPost.tags.length > 0 ?
+                                    `<span class="featured-post-tags">${featuredPost.tags.slice(0, 2).join(' • ')}</span>` : ''}
+                            </div>
+                            <h3 class="featured-post-title">${featuredPost.title}</h3>
+                            <p class="featured-post-excerpt">${featuredPost.summary}</p>
+                            <span class="featured-post-link">Read Full Article <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+                        </div>
+                    </a>
+                `;
+
+                container.classList.add('loaded');
+            } catch (error) {
+                console.error('Error loading featured post:', error);
+                section.style.display = 'none';
+            }
+        })();
+    </script>
 </body>
 </html>

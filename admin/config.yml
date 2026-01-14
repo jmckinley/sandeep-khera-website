@@ -23,4 +23,5 @@ collections:
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Author", name: "author", widget: "string", default: "Sandeep Khera" }
       - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Featured on Homepage", name: "featured", widget: "boolean", default: false, hint: "Check to display this post prominently on the homepage" }
       - { label: "Body", name: "body", widget: "markdown" }

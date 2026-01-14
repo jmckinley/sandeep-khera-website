@@ -27,16 +27,54 @@ jobs:
 
             const match = content.match(/^---\n([\s\S]*?)\n---/);
             const metadata = {};
+            let tagsArray = [];
 
             if (match) {
-              match[1].split('\n').forEach(line => {
+              const lines = match[1].split('\n');
+              let inTags = false;
+
+              for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+
+                // Check if we're in a tags array
+                if (inTags) {
+                  if (line.match(/^\s+-\s+/)) {
+                    // This is a tag item
+                    const tag = line.replace(/^\s+-\s+/, '').replace(/^["']|["']$/g, '').trim();
+                    if (tag) tagsArray.push(tag);
+                    continue;
+                  } else if (line.match(/^\s/) || line.trim() === '') {
+                    continue;
+                  } else {
+                    inTags = false;
+                  }
+                }
+
                 const idx = line.indexOf(':');
                 if (idx > 0 && !line.startsWith('  ') && !line.startsWith('-')) {
                   const key = line.substring(0, idx).trim();
-                  let val = line.substring(idx + 1).trim().replace(/^["']|["']$/g, '');
-                  metadata[key] = val === '' ? [] : val;
+                  let val = line.substring(idx + 1).trim();
+
+                  // Handle tags as array
+                  if (key === 'tags') {
+                    // Check if inline array: tags: ["tag1", "tag2"]
+                    const inlineMatch = val.match(/^\[(.+)\]$/);
+                    if (inlineMatch) {
+                      tagsArray = inlineMatch[1].split(',').map(t => t.trim().replace(/^["']|["']$/g, ''));
+                    } else if (val === '' || val === '[]') {
+                      inTags = true;
+                    }
+                    continue;
+                  }
+
+                  // Handle boolean fields
+                  if (val === 'true') val = true;
+                  else if (val === 'false') val = false;
+                  else val = val.replace(/^["']|["']$/g, '');
+
+                  metadata[key] = val;
                 }
-              });
+              }
             }
 
             return {
@@ -46,11 +84,28 @@ jobs:
               image: metadata.image || '/images/blog/default.jpg',
               summary: metadata.summary || '',
               author: metadata.author || 'Sandeep Khera',
-              tags: []
+              tags: tagsArray,
+              featured: metadata.featured === true
             };
           });
 
+          // Sort by date (newest first)
           posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          // Enforce single featured post rule:
+          // Keep only the first (most recent) featured post, unfeature the rest
+          let foundFeatured = false;
+          posts.forEach(post => {
+            if (post.featured) {
+              if (foundFeatured) {
+                post.featured = false;
+                console.log(`Unfeatured "${post.title}" - only one featured post allowed`);
+              } else {
+                foundFeatured = true;
+                console.log(`Featured post: "${post.title}"`);
+              }
+            }
+          });
 
           fs.writeFileSync(
             path.join(blogDir, 'posts.json'),
