@@ -1,82 +1,160 @@
 [
   {
-    "slug": "delegation-lessons",
-    "title": "The Art of Letting Go – Delegation Lessons",
-    "date": "2025-11-24",
-    "image": "/images/blog/delegation-lessons.jpg",
-    "summary": "How releasing control paradoxically strengthens leadership effectiveness.",
+    "slug": "ai-management",
+    "title": "Is AI in Management Overhyped or Underutilised?",
+    "date": "2025-11-29",
+    "image": "/images/blog/business-coaching.jpg",
+    "summary": "AI's genuine potential lies not in replacing leaders, but in augmenting human decision-making.",
     "author": "Sandeep Khera",
-    "tags": ["Leadership", "Delegation", "Trust"],
+    "tags": [
+      "AI",
+      "Leadership",
+      "Technology",
+      "Future of Work"
+    ],
     "featured": false
   },
   {
-    "slug": "leadership-daughter",
-    "title": "What My Daughter Taught Me About Leadership",
-    "date": "2025-11-24",
+    "slug": "conflict-is-gift",
+    "title": "When Conflict is a Gift – Learning from Disagreements",
+    "date": "2025-11-29",
+    "image": "/images/blog/comparing.jpg",
+    "summary": "Why respectful disagreement fuels innovation rather than hindering it.",
+    "author": "Sandeep Khera",
+    "tags": [
+      "Conflict Resolution",
+      "Leadership",
+      "Innovation"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "forgiveness-leadership",
+    "title": "The Leadership Skill No One Talks About: Forgiveness",
+    "date": "2025-11-29",
+    "image": "/images/blog/forgiveness.jpg",
+    "summary": "How we handle others' failures—and our own—defines the culture we build.",
+    "author": "Sandeep Khera",
+    "tags": [
+      "Forgiveness",
+      "Leadership Development",
+      "Emotional Intelligence",
+      "Workplace Culture"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "hardest-feedback",
+    "title": "The Hardest Feedback I Ever Had to Give (and How I Did It)",
+    "date": "2025-11-29",
+    "image": "/images/blog/forgiveness.jpg",
+    "summary": "A painful, yet necessary, lesson in delivering hard truths with compassion and integrity.",
+    "author": "Sandeep Khera",
+    "tags": [
+      "Leadership",
+      "Feedback",
+      "Integrity"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "hiring-potential",
+    "title": "Hiring for Potential vs. Experience – A CIO's Perspective",
+    "date": "2025-11-29",
     "image": "/images/blog/leadership-daughter.jpg",
-    "summary": "The most profound leadership lessons come from the smallest, most unexpected mentors.",
+    "summary": "Why the raw hunger to learn, adapt, and innovate often matters more than a polished resume.",
     "author": "Sandeep Khera",
-    "tags": ["Leadership", "Parenthood", "Growth"],
+    "tags": [
+      "Hiring",
+      "Leadership",
+      "Talent"
+    ],
     "featured": false
   },
   {
-    "slug": "younger-me",
-    "title": "Dear Younger Me: 5 Things I Wish I Knew Before Becoming a Manager",
-    "date": "2025-11-24",
-    "image": "/images/blog/younger-me.jpg",
-    "summary": "Hard-won wisdom I would share with my younger self about leadership and life.",
+    "slug": "motivation-drops",
+    "title": "What I Do When My Motivation Drops at Work",
+    "date": "2025-11-29",
+    "image": "/images/blog/executive-coaching.jpg",
+    "summary": "Practical strategies for managing motivation dips without superficial positivity.",
     "author": "Sandeep Khera",
-    "tags": ["Career Advice", "Leadership", "Self Reflection"],
+    "tags": [
+      "Motivation",
+      "Productivity",
+      "Work Life Balance",
+      "Leadership"
+    ],
     "featured": false
   },
   {
-    "slug": "crash-changed-everything",
-    "title": "The Day I Survived a Crash, and Everything Changed",
-    "date": "2025-11-24",
-    "image": "/images/blog/crash-changed.jpg",
-    "summary": "A near-fatal accident became the catalyst for complete life reevaluation.",
+    "slug": "recognition-beyond-bonus",
+    "title": "Recognition: What It Means to Your Team Beyond a Bonus",
+    "date": "2025-11-29",
+    "image": "/images/blog/quiet-leadership.jpg",
+    "summary": "Why genuine appreciation—acknowledging the person behind the performance—creates deeper impact than financial rewards alone.",
     "author": "Sandeep Khera",
-    "tags": ["Life Lessons", "Gratitude", "Personal Transformation"],
+    "tags": [
+      "Leadership",
+      "Team Culture",
+      "Recognition"
+    ],
     "featured": false
   },
   {
-    "slug": "results-not-everything",
-    "title": "Why Results Aren't Everything",
-    "date": "2025-11-24",
-    "image": "/images/blog/results-not-everything.jpg",
-    "summary": "How a health crisis taught me that productivity without genuine presence is merely survival.",
+    "slug": "story-matters",
+    "title": "Your Story Matters, Even If No One Sees It Yet",
+    "date": "2025-11-29",
+    "image": "/images/blog/life-coaching.jpg",
+    "summary": "Don't underestimate the transformative power of your own journey.",
     "author": "Sandeep Khera",
-    "tags": ["Work Life Balance", "Burnout", "Wellness"],
+    "tags": [
+      "Personal Journey",
+      "Storytelling",
+      "Resilience",
+      "Self Belief"
+    ],
     "featured": false
   },
   {
-    "slug": "stop-comparing",
-    "title": "Stop Comparing. Start Noticing.",
-    "date": "2025-11-24",
-    "image": "/images/blog/stop-comparing.jpg",
-    "summary": "Your career isn't a race against others—it's a deeply personal conversation with yourself.",
+    "slug": "weekend-boundaries",
+    "title": "Weekend Boundaries: Do You Really Switch Off?",
+    "date": "2025-11-29",
+    "image": "/images/blog/motivation.jpg",
+    "summary": "Exploring how corporate professionals struggle to maintain work-life boundaries and why switching off isn't a luxury—it's a necessity.",
     "author": "Sandeep Khera",
-    "tags": ["Self Awareness", "Personal Growth", "Authentic Leadership"],
+    "tags": [
+      "Work-Life Balance",
+      "Leadership",
+      "Wellbeing"
+    ],
     "featured": false
   },
   {
-    "slug": "lost-in-30s",
-    "title": "If You're Lost in Your 30s, You're Not Alone",
-    "date": "2025-11-24",
-    "image": "/images/blog/lost-in-30s.jpg",
-    "summary": "Being lost isn't failure—it's an opening toward genuine self-awareness and transformation.",
+    "slug": "workplaces-2030",
+    "title": "Workplaces of 2030 – What Will Truly Change?",
+    "date": "2025-11-29",
+    "image": "/images/blog/wealth-coaching.jpg",
+    "summary": "Beyond hybrid work—the fundamental shifts that will define the workplace of the future.",
     "author": "Sandeep Khera",
-    "tags": ["Personal Growth", "Self Discovery", "Resilience"],
+    "tags": [
+      "Future of Work",
+      "Leadership",
+      "Culture"
+    ],
     "featured": false
   },
   {
     "slug": "compassion",
     "title": "What My Journey Taught Me About Compassion",
     "date": "2025-11-25",
-    "image": "/images/blog/compassion.jpg",
+    "image": "/images/blog/life-coaching.jpg",
     "summary": "A childhood lesson that shaped my understanding of ethical leadership.",
     "author": "Sandeep Khera",
-    "tags": ["Compassion", "Ethical Leadership", "Life Lessons"],
+    "tags": [
+      "Compassion",
+      "Ethical Leadership",
+      "Life Lessons"
+    ],
     "featured": false
   },
   {
@@ -86,107 +164,112 @@
     "image": "/images/blog/quiet-leadership.jpg",
     "summary": "The most powerful impact comes through consistent understanding, not grand pronouncements.",
     "author": "Sandeep Khera",
-    "tags": ["Quiet Leadership", "Empathy", "Authenticity"],
+    "tags": [
+      "Quiet Leadership",
+      "Empathy",
+      "Leadership Skills",
+      "Authenticity"
+    ],
+    "featured": false
+  },
+  {
+    "slug": "crash-changed-everything",
+    "title": "The Day I Survived a Crash, and Everything Changed",
+    "date": "2025-11-24",
+    "image": "/images/blog/crash.jpg",
+    "summary": "A personal account of a pivotal moment on April 24, 2020 that reshaped",
+    "author": "Sandeep Khera",
+    "tags": [
+      "Personal Story",
+      "Resilience",
+      "Mindset"
+    ],
     "featured": true
   },
   {
-    "slug": "forgiveness-leadership",
-    "title": "The Leadership Skill No One Talks About: Forgiveness",
-    "date": "2025-11-29",
-    "image": "/images/blog/forgiveness-leadership.jpg",
-    "summary": "How we handle others' failures—and our own—defines the culture we build.",
+    "slug": "delegation-lessons",
+    "title": "The Art of Letting Go: Delegation Lessons",
+    "date": "2025-11-24",
+    "image": "/images/blog/delegation.jpg",
+    "summary": "Explores how leadership requires relinquishing control and trusting others with responsibilities.",
     "author": "Sandeep Khera",
-    "tags": ["Forgiveness", "Emotional Intelligence", "Workplace Culture"],
+    "tags": [
+      "Leadership",
+      "Management",
+      "Growth"
+    ],
     "featured": false
   },
   {
-    "slug": "story-matters",
-    "title": "Your Story Matters, Even If No One Sees It Yet",
-    "date": "2025-11-29",
-    "image": "/images/blog/story-matters.jpg",
-    "summary": "Don't underestimate the transformative power of your own journey.",
+    "slug": "leadership-daughter",
+    "title": "What My Daughter Taught Me About Leadership",
+    "date": "2025-11-24",
+    "image": "/images/blog/leadership-daughter.jpg",
+    "summary": "Reflects on parenting insights that transformed my approach to managing teams.",
     "author": "Sandeep Khera",
-    "tags": ["Personal Journey", "Resilience", "Self Belief"],
+    "tags": [
+      "Leadership",
+      "Family",
+      "Personal Growth"
+    ],
     "featured": false
   },
   {
-    "slug": "motivation-drops",
-    "title": "What I Do When My Motivation Drops at Work",
-    "date": "2025-11-29",
-    "image": "/images/blog/motivation-drops.jpg",
-    "summary": "Practical strategies for managing motivation dips without superficial positivity.",
+    "slug": "lost-in-30s",
+    "title": "If You're Lost in Your 30s, You're Not Alone",
+    "date": "2025-11-24",
+    "image": "/images/blog/life-coaching.jpg",
+    "summary": "Being lost isn't failure—it's an opening toward genuine self-awareness and transformation.",
     "author": "Sandeep Khera",
-    "tags": ["Motivation", "Productivity", "Work Life Balance"],
+    "tags": [
+      "Personal Growth",
+      "Self Discovery",
+      "Resilience",
+      "Purpose"
+    ],
     "featured": false
   },
   {
-    "slug": "weekend-boundaries",
-    "title": "Weekend Boundaries: Do You Really Switch Off?",
-    "date": "2025-11-29",
-    "image": "/images/blog/weekend-boundaries.jpg",
-    "summary": "How protecting personal time fuels professional performance.",
+    "slug": "results-not-everything",
+    "title": "Why Results Aren't Everything",
+    "date": "2025-11-24",
+    "image": "/images/blog/business-coaching.jpg",
+    "summary": "How a health crisis taught me that productivity without genuine presence is merely survival.",
     "author": "Sandeep Khera",
-    "tags": ["Work Life Balance", "Boundaries", "Wellbeing"],
+    "tags": [
+      "Work Life Balance",
+      "Burnout",
+      "Leadership",
+      "Wellness"
+    ],
     "featured": false
   },
   {
-    "slug": "hiring-potential",
-    "title": "Hiring for Potential vs. Experience – A CIO's Perspective",
-    "date": "2025-11-29",
-    "image": "/images/blog/hiring-potential.jpg",
-    "summary": "Why adaptability and learning agility matter more than credentials.",
+    "slug": "stop-comparing",
+    "title": "Stop Comparing. Start Noticing.",
+    "date": "2025-11-24",
+    "image": "/images/blog/comparing.jpg",
+    "summary": "Your career isn't a race against others—it's a deeply personal conversation with yourself.",
     "author": "Sandeep Khera",
-    "tags": ["Hiring", "Leadership", "Talent Management"],
+    "tags": [
+      "Self Awareness",
+      "Personal Growth",
+      "Authentic Leadership"
+    ],
     "featured": false
   },
   {
-    "slug": "recognition-beyond-bonus",
-    "title": "Recognition: What It Means to Your Team Beyond a Bonus",
-    "date": "2025-11-29",
-    "image": "/images/blog/recognition-beyond-bonus.jpg",
-    "summary": "Why genuine appreciation creates deeper impact than financial rewards alone.",
+    "slug": "younger-me",
+    "title": "Dear Younger Me: 5 Things I Wish I Knew Before Becoming a Manager",
+    "date": "2025-11-24",
+    "image": "/images/blog/executive-coaching.jpg",
+    "summary": "Hard-won wisdom I would share with my younger self about leadership and life.",
     "author": "Sandeep Khera",
-    "tags": ["Leadership", "Team Culture", "Recognition"],
-    "featured": false
-  },
-  {
-    "slug": "hardest-feedback",
-    "title": "The Hardest Feedback I Ever Had to Give (and How I Did It)",
-    "date": "2025-11-29",
-    "image": "/images/blog/hardest-feedback.jpg",
-    "summary": "A painful, yet necessary, lesson in delivering hard truths with compassion and integrity.",
-    "author": "Sandeep Khera",
-    "tags": ["Leadership", "Feedback", "Integrity"],
-    "featured": false
-  },
-  {
-    "slug": "conflict-is-gift",
-    "title": "When Conflict is a Gift – Learning from Disagreements",
-    "date": "2025-11-29",
-    "image": "/images/blog/conflict-is-gift.jpg",
-    "summary": "Why respectful disagreement fuels innovation rather than hindering it.",
-    "author": "Sandeep Khera",
-    "tags": ["Conflict Resolution", "Leadership", "Innovation"],
-    "featured": false
-  },
-  {
-    "slug": "ai-management",
-    "title": "Is AI in Management Overhyped or Underutilised?",
-    "date": "2025-11-29",
-    "image": "/images/blog/ai-management.jpg",
-    "summary": "AI's genuine potential lies not in replacing leaders, but in augmenting human decision-making.",
-    "author": "Sandeep Khera",
-    "tags": ["AI", "Leadership", "Technology"],
-    "featured": false
-  },
-  {
-    "slug": "workplaces-2030",
-    "title": "Workplaces of 2030 – What Will Truly Change?",
-    "date": "2025-11-29",
-    "image": "/images/blog/workplaces-2030.jpg",
-    "summary": "Beyond hybrid work—the fundamental shifts that will define the workplace of the future.",
-    "author": "Sandeep Khera",
-    "tags": ["Future of Work", "Leadership", "Culture"],
+    "tags": [
+      "Career Advice",
+      "Leadership",
+      "Self Reflection"
+    ],
     "featured": false
   }
 ]
