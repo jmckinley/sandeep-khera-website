@@ -1,39 +1,9 @@
-const REPO = 'kyliemckinleydemo/sandeep-khera-website';
-const BRANCH = 'main';
-const BLOG_PATH = 'content/blog';
-
-function parseFrontMatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return {};
-
-  const frontMatter = match[1];
-  const metadata = {};
-  let currentKey = null;
-
-  frontMatter.split('\n').forEach(line => {
-    const colonIndex = line.indexOf(':');
-    if (colonIndex > 0 && !line.startsWith('  ') && !line.startsWith('-')) {
-      currentKey = line.substring(0, colonIndex).trim();
-      let value = line.substring(colonIndex + 1).trim();
-
-      if ((value.startsWith('"') && value.endsWith('"')) ||
-          (value.startsWith("'") && value.endsWith("'"))) {
-        value = value.slice(1, -1);
-      }
-
-      metadata[currentKey] = value === '' ? [] : value;
-    } else if (line.trim().startsWith('-') && currentKey && Array.isArray(metadata[currentKey])) {
-      metadata[currentKey].push(line.trim().substring(1).trim());
-    }
-  });
-
-  return metadata;
-}
-
 export default async function handler(req, res) {
+  const REPO = 'kyliemckinleydemo/sandeep-khera-website';
+  const BLOG_PATH = 'content/blog';
+
   try {
-    // Get list of files in content/blog from GitHub
-    const listUrl = `https://api.github.com/repos/${REPO}/contents/${BLOG_PATH}?ref=${BRANCH}`;
+    const listUrl = `https://api.github.com/repos/${REPO}/contents/${BLOG_PATH}`;
     const listResponse = await fetch(listUrl, {
       headers: {
         'Accept': 'application/vnd.github.v3+json',
@@ -42,38 +12,47 @@ export default async function handler(req, res) {
     });
 
     if (!listResponse.ok) {
-      const errorText = await listResponse.text();
-      return res.status(500).json({ error: `GitHub API error: ${listResponse.status}`, details: errorText });
+      return res.status(500).json({ error: 'GitHub API error', status: listResponse.status });
     }
 
     const files = await listResponse.json();
     const mdFiles = files.filter(f => f.name.endsWith('.md'));
 
-    // Fetch each markdown file's content
-    const posts = await Promise.all(mdFiles.map(async (file) => {
-      const slug = file.name.replace('.md', '');
-
+    const posts = [];
+    for (const file of mdFiles) {
       const contentResponse = await fetch(file.download_url);
       const content = await contentResponse.text();
-      const metadata = parseFrontMatter(content);
 
-      return {
-        slug,
-        title: metadata.title || slug,
+      // Simple frontmatter parsing
+      const match = content.match(/^---\n([\s\S]*?)\n---/);
+      const metadata = {};
+
+      if (match) {
+        match[1].split('\n').forEach(line => {
+          const idx = line.indexOf(':');
+          if (idx > 0) {
+            const key = line.substring(0, idx).trim();
+            let val = line.substring(idx + 1).trim().replace(/^["']|["']$/g, '');
+            metadata[key] = val;
+          }
+        });
+      }
+
+      posts.push({
+        slug: file.name.replace('.md', ''),
+        title: metadata.title || file.name,
         date: metadata.date || '',
         image: metadata.image || '/images/blog/default.jpg',
         summary: metadata.summary || '',
-        author: metadata.author || 'Sandeep Khera',
-        tags: Array.isArray(metadata.tags) ? metadata.tags : []
-      };
-    }));
+        author: metadata.author || 'Sandeep Khera'
+      });
+    }
 
-    // Sort by date (newest first)
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
+    res.setHeader('Cache-Control', 's-maxage=300');
     return res.status(200).json(posts);
   } catch (error) {
-    return res.status(500).json({ error: 'Failed to load posts', details: error.message });
+    return res.status(500).json({ error: error.message });
   }
 }
