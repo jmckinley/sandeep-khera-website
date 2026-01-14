@@ -1,0 +1,69 @@
+name: Update Posts Index
+
+on:
+  push:
+    paths:
+      - 'content/blog/*.md'
+  workflow_dispatch:
+
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate posts.json
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+
+          const blogDir = './content/blog';
+          const files = fs.readdirSync(blogDir).filter(f => f.endsWith('.md'));
+
+          const posts = files.map(filename => {
+            const slug = filename.replace('.md', '');
+            const content = fs.readFileSync(path.join(blogDir, filename), 'utf-8');
+
+            const match = content.match(/^---\n([\s\S]*?)\n---/);
+            const metadata = {};
+
+            if (match) {
+              match[1].split('\n').forEach(line => {
+                const idx = line.indexOf(':');
+                if (idx > 0 && !line.startsWith('  ') && !line.startsWith('-')) {
+                  const key = line.substring(0, idx).trim();
+                  let val = line.substring(idx + 1).trim().replace(/^["']|["']$/g, '');
+                  metadata[key] = val === '' ? [] : val;
+                }
+              });
+            }
+
+            return {
+              slug,
+              title: metadata.title || slug,
+              date: metadata.date || '',
+              image: metadata.image || '/images/blog/default.jpg',
+              summary: metadata.summary || '',
+              author: metadata.author || 'Sandeep Khera',
+              tags: []
+            };
+          });
+
+          posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          fs.writeFileSync(
+            path.join(blogDir, 'posts.json'),
+            JSON.stringify(posts, null, 2)
+          );
+
+          console.log(`Generated posts.json with ${posts.length} posts`);
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add content/blog/posts.json
+          git diff --staged --quiet || git commit -m "Auto-update posts.json"
+          git push
