@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: kyliemckinleydemo/sandeep-khera-website
+  repo: jmckinley/sandeep-khera-website
   branch: main
   base_url: https://sandeepkhera.vercel.app
   auth_endpoint: /api/auth
